@@ -27,6 +27,12 @@ export class Board {
     }
   }
 
+  public addLostFigure(figure: Figure) {
+    figure.color === Colors.BLACK
+      ? this.lostBlackFigures.push(figure)
+      : this.lostWhiteFigures.push(figure);
+  }
+
   public highlightCells(selectedCell: Cell | null) {
     for (let i = 0; i < this.cells.length; i++) {
       const row = this.cells[i];
@@ -40,6 +46,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board();
     newBoard.cells = this.cells;
+    newBoard.lostWhiteFigures = this.lostWhiteFigures;
+    newBoard.lostBlackFigures = this.lostBlackFigures;
     return newBoard;
   }
 
