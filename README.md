@@ -1,2 +1,2 @@
 GitHub Pages:
-https://nick-levshin.github.io/Chess/public
+https://nick-levshin.github.io/Chess
